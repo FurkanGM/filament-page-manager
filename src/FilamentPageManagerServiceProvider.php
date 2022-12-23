@@ -1,13 +1,13 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace FurkanGM\FilamentPageManager;
 
 use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 
-class SkeletonServiceProvider extends PluginServiceProvider
+class FilamentPageManagerServiceProvider extends PluginServiceProvider
 {
-    public static string $name = 'skeleton';
+    public static string $name = 'filament-page-manager';
 
     protected array $resources = [
         // CustomResource::class,
@@ -22,15 +22,15 @@ class SkeletonServiceProvider extends PluginServiceProvider
     ];
 
     protected array $styles = [
-        'plugin-skeleton' => __DIR__.'/../resources/dist/skeleton.css',
+        'plugin-filament-page-manager' => __DIR__.'/../resources/dist/filament-page-manager.css',
     ];
 
     protected array $scripts = [
-        'plugin-skeleton' => __DIR__.'/../resources/dist/skeleton.js',
+        'plugin-filament-page-manager' => __DIR__.'/../resources/dist/filament-page-manager.js',
     ];
 
     // protected array $beforeCoreScripts = [
-    //     'plugin-skeleton' => __DIR__ . '/../resources/dist/skeleton.js',
+    //     'plugin-filament-page-manager' => __DIR__ . '/../resources/dist/filament-page-manager.js',
     // ];
 
     public function configurePackage(Package $package): void
