@@ -30,31 +30,43 @@ You can publish the config file with:
 php artisan vendor:publish --tag="filament-page-manager-config"
 ```
 
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="filament-page-manager-views"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
 ## Usage
 
+First create page template with make command
+
+```shell
+php artisan make:page-template {name?}
+```
+
+Also you can create manually page template with extend `\FurkanGM\FilamentPageManager\Templates\PageTemplate` class
+
 ```php
-$filament-page-manager = new FurkanGM\FilamentPageManager();
-echo $filament-page-manager->echoPhrase('Hello, FurkanGM!');
+class ExampleTemplate extends \FurkanGM\FilamentPageManager\Templates\PageTemplate
+{
+    // ....
+}
 ```
 
-## Testing
+After creating page, you should register page template in config file.
 
-```bash
-composer test
+```php
+'templates' => [
+    // ...
+    CreatedPageTemplate::class
+]
 ```
+
+If you want register templates without config file,  you can use `FilamentPageManager` facade.
+
+```php
+app(\FurkanGM\FilamentPageManager\FilamentPageManager::class)->setPageTemplates([
+    // templates...
+]);
+```
+
+## Customization
+
+You can extend `Page` model and `PageResource` resource.
 
 ## Changelog
 
