@@ -1,0 +1,33 @@
+<?php
+
+namespace {{ namespace }};
+
+use FurkanGM\FilamentPageManager\Templates\PageTemplate;
+
+class {{ class }} extends PageTemplate
+{
+   protected static string $name = '{{ name }}';
+
+   protected bool $isSlugHidden = false;
+
+   public static function mainFields(): array
+   {
+       return [
+           // main fields...
+       ];
+   }
+
+   public static function sidebarFields(): array
+   {
+       return [
+           // sidebar fields...
+       ];
+   }
+
+   public static function outsideFields(): array
+   {
+       return [
+           // outside fields...
+       ];
+   }
+}
