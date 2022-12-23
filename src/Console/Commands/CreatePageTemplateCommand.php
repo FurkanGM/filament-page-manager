@@ -6,9 +6,9 @@ use Illuminate\Console\GeneratorCommand;
 
 class CreatePageTemplateCommand extends GeneratorCommand
 {
-    protected $signature = 'page-manager:create {name?}';
+    protected $signature = 'make:page-template {name?}';
 
-    protected $name = 'page-manager:create';
+    protected $name = 'make:page-template';
 
     protected $description = 'Create page template';
 
