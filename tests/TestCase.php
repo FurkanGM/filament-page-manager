@@ -3,10 +3,10 @@
 namespace FurkanGM\FilamentPageManager\Tests;
 
 use Filament\FilamentServiceProvider;
+use FurkanGM\FilamentPageManager\FilamentPageManagerServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use FurkanGM\FilamentPageManager\FilamentPageManagerServiceProvider;
 
 class TestCase extends Orchestra
 {
