@@ -14,7 +14,6 @@ class FilamentPageManager
     /** @var class-string<PageResource> */
     public string $resource;
 
-    /** @var array */
     public array $pageTemplates = [];
 
     public function __construct()
@@ -54,9 +53,6 @@ class FilamentPageManager
         return collect($this->getPageTemplates())->get($name);
     }
 
-    /**
-     * @return array
-     */
     public function getPageTemplates(): array
     {
         return collect($this->pageTemplates)
@@ -68,7 +64,6 @@ class FilamentPageManager
 
     /**
      * @param  PageTemplate[]  $pageTemplates
-     * @return void
      */
     public function setPageTemplates(array $pageTemplates): void
     {
