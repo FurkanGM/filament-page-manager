@@ -41,7 +41,7 @@ class FilamentPageManager
     }
 
     /**
-     * @return class-string<Page>
+     * @return class-string<PageResource>
      */
     public function getResource()
     {

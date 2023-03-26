@@ -31,8 +31,8 @@ class PageResource extends Resource
                         $additionalOutsideFields = [];
 
                         if ($livewire instanceof (Pages\EditPage::class) || filled($get('template'))) {
-                            $additionalMainFields = $record?->getTemplate()->mainFields() ?? FilamentPageManager::getPageTemplate($get('template'))->mainFields();
-                            $additionalOutsideFields = $record?->getTemplate()->outsideFields() ?? FilamentPageManager::getPageTemplate($get('template'))->outsideFields();
+                            $additionalMainFields = $record->getTemplate()->mainFields() ?? FilamentPageManager::getPageTemplate($get('template'))->mainFields();
+                            $additionalOutsideFields = $record->getTemplate()->outsideFields() ?? FilamentPageManager::getPageTemplate($get('template'))->outsideFields();
                         }
 
                         return array_merge([
@@ -71,10 +71,10 @@ class PageResource extends Resource
                                 ->schema([
                                     Forms\Components\Placeholder::make('created_at')
                                         ->label(__('filament-page-manager::fields.creation_date'))
-                                        ->content(fn (?Page $record): string => $record?->created_at->diffForHumans() ?? '-'),
+                                        ->content(fn (?Page $record): string => $record?->created_at->diffForHumans() ?? '-'), /* @phpstan-ignore-line */
                                     Forms\Components\Placeholder::make('updated_at')
                                         ->label(__('filament-page-manager::fields.updated_date'))
-                                        ->content(fn (?Page $record): string => $record?->updated_at->diffForHumans() ?? '-'),
+                                        ->content(fn (?Page $record): string => $record?->updated_at->diffForHumans() ?? '-'), /* @phpstan-ignore-line */
                                 ]),
                         ], $additionalFields);
                     }),

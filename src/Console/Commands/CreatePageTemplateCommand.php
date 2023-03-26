@@ -14,7 +14,7 @@ class CreatePageTemplateCommand extends GeneratorCommand
 
     protected $type = 'Page Template';
 
-    public function handle()
+    public function handle(): ?bool
     {
         $name = $this->argument('name') ?? $this->ask('What is page template name?');
 
@@ -29,7 +29,7 @@ class CreatePageTemplateCommand extends GeneratorCommand
         if ($this->isReservedName($className)) {
             $this->error('The name "'.$className.'" is reserved by PHP.');
 
-            return;
+            return false;
         }
 
         $path = $this->getPath($className);
@@ -37,7 +37,7 @@ class CreatePageTemplateCommand extends GeneratorCommand
         if ($this->files->exists($path)) {
             $this->error(basename($className).' already exists!');
 
-            return;
+            return false;
         }
 
         $this->makeDirectory($path);
@@ -53,6 +53,8 @@ class CreatePageTemplateCommand extends GeneratorCommand
         }
 
         $this->info($this->type.' created successfully.');
+
+        return true;
     }
 
     protected function getDefaultNamespace($rootNamespace): string
